@@ -9,6 +9,7 @@ import { useState, useEffect, useContext, createContext } from "react";
 import { auth, db } from "../../firebase";
 import { doc, getDoc } from "firebase/firestore";
 
+
 const AuthContext = createContext();
 
 export function useAuth() {
@@ -24,9 +25,12 @@ export function AuthProvider(props) {
     return createUserWithEmailAndPassword(auth, email, password);
   }
 
+  //email
   function login(email, password) {
     return signInWithEmailAndPassword(auth, email, password);
   }
+
+
 
   function resetPaswword(email) {
     return sendPasswordResetEmail;
